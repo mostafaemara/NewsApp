@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainMenu"
+
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true">
+<LinearLayout
+    android:background="@color/fragmentbackgroundcolor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<android.support.v7.widget.Toolbar
+
+    android:id="@+id/toolbar"
+    android:background="@color/appcolor"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize">
+
+   <com.hbb20.CountryCodePicker
+       app:ccpDialog_textColor="@color/tabtextcolors"
+
+android:layout_marginLeft="80dp"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/ccp"
+       app:ccp_showPhoneCode="false"
+       app:ccp_autoDetectCountry="true"
+       app:ccp_customMasterCountries="ae,ar,at,au,be,bg,
+       br,ca,ch,cn,co,cu,cz,de,eg,fr,gb,gr, hk, hu, id,
+       ie,il,in,it,jp,kr,lt,lv,ma,mx,my,ng,nl,no,nz,ph,
+       pl,pt,ro,rs,ru,sa,se,sg,si,sk,th,tr,tw,ua,us,ve,za"
+       app:ccpDialog_showFlag="true"
+       app:ccpDialog_showTitle="true">
+
+   </com.hbb20.CountryCodePicker>
+
+
+
+</android.support.v7.widget.Toolbar>
+
+
+
+
+
+
+    <include
+        layout="@layout/category_layout">
+
+    </include>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_container">
+
+    </FrameLayout>
+
+
+</LinearLayout>
+    
+    <android.support.design.widget.NavigationView
+
+        android:background="#F7F3E1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/navigation_layout"
+        app:menu="@menu/drawer_menu"
+        ></android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>
